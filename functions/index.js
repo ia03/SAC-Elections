@@ -17,14 +17,17 @@ exports.submitVote = functions.https.onCall((data, context) => {
   }
   const email = context.auth.token.email.replace(/\./g, ',');
   return ref.once('value').then(function(snapshot) {
-    if (!snapshot.hasChild(email)) {
-      throw new functions.https.HttpsError('failed-precondition', 'You are not registered ' +
-          'to vote.');
+    if (!email.endsWith("@wrdsb,ca")) {
+      throw new functions.https.HttpsError('failed-precondition', 'You must use a WRDSB ' +
+          'email to vote.');
     }
-    var vote = snapshot.child(email);
-    if (vote.child('voted').val()) {
-      throw new functions.https.HttpsError('failed-precondition', 'You have already voted.');
-    }
+	if (snapshot.hasChild(email))
+	{
+		var vote = snapshot.child(email);
+		if (vote.child('voted').val()) {
+		  throw new functions.https.HttpsError('failed-precondition', 'You have already voted.');
+		}
+	}
     if (votesIn.includes('one')) {
       votesOut.push('one');
     }
