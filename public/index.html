@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SAC Elections 2020</title>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.9.2/firebase-functions.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <div id="vote-container">
+      <h1 id="title">SAC Elections 2020</h1>
+      <div id="firebaseui-auth-container"></div>
+      <p class="description" id="signinreminder">Sign in to vote.</p>
+      <div hidden id="authcontent">
+        <div id="email" class="small"></div>
+        <button id="signoutbtn" onclick="firebase.auth().signOut();">Sign out</button>
+        <p class="small">Please vote using the school network to make sure your vote is counted.</p>
+        <p class="description">Choose 2 candidates to vote for:</p>
+        
+        <input type="checkbox" id="one" name="one" value="voted">
+        <label class="btn" for="one">
+          <div class="candidate-container">
+            <span class="candidate-name">Candidate #1</span>
+          </div>
+        </label>
+        <input type="checkbox" id="two" name="two" value="voted">
+        <label class="btn" for="two">
+          <div class="candidate-container">
+            <span class="candidate-name">Candidate #2</span>
+          </div>
+        </label>
+        <input type="checkbox" id="three" name="three" value="voted">
+        <label class="btn" for="three">
+          <div class="candidate-container">
+            <span class="candidate-name">Candidate #3</span>
+          </div>
+        </label>
+        <input type="checkbox" id="four" name="four" value="voted">
+        <label class="btn" for="four">
+          <div class="candidate-container">
+            <span class="candidate-name">Candidate #4</span>
+          </div>
+        </label>
+        <div id="submit" class="candidate-container">Submit</div>
+        <p id="errormsg" class="small"></p>
+        <p id="statusmsg" class="small"></p>
+        <br><br>
+        <p class="small">Back-end development by <a href="https://ibrahimahmed.ca">Ibrahim Ahmed.</a> Front-end development by <a href="https://victorwei.com">Victor Wei.</a></p>
+      </div>
+      <br />
+    </div>
+  </body>
+</html>

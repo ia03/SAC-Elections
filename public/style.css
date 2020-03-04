@@ -1,0 +1,90 @@
+@font-face {
+    font-family: ChunkFive;
+    src: url("ChunkFive-Regular.otf") format("opentype");
+}
+
+body {
+	background-color: #006600;
+	font-family: ChunkFive;
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+#title {
+	padding-top: 3vh;
+	font-size: 5vh;
+	text-align: center;
+}
+
+.description {
+	font-size: 3vh;
+	margin-left: 3vh;
+}
+
+.small {
+	margin-left: 2vh;
+}
+
+.candidate-container {
+	position: relative;
+	width: 96%;
+	left: 2%;
+	background-color: lightgrey;
+	padding: 3vh;
+	margin-bottom: 2vh;
+	display: inline-block;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	text-align: center;
+	font-size: 2vh;
+}
+
+.candidate-container:hover {
+	outline: 1px solid lime;
+}
+
+#one {
+    display: none;
+}
+
+#one:checked + label > .candidate-container {
+    outline: 3px solid lime;
+    background-color: 
+}
+
+#two {
+    display: none;
+}
+
+#two:checked + label > .candidate-container {
+    outline: 3px solid lime;
+}
+
+#three {
+    display: none;
+}
+
+#three:checked + label > .candidate-container {
+    outline: 3px solid lime;
+}
+
+#four {
+    display: none;
+}
+
+#four:checked + label > .candidate-container {
+    outline: 3px solid lime;
+}
+
+#vote-container {
+	width: 95%;
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: #d4af37;
+}
