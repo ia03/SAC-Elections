@@ -25,7 +25,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
     ui.start('#firebaseui-auth-container', {
-      signInSuccessUrl: 'https://sac-elections.firebaseapp.com',
+      signInSuccessUrl: 'https://elections.chciprogramming.com',
       signInOptions: [
         {
           provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
