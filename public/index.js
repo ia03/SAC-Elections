@@ -69,4 +69,5 @@ function submitVote() {
 }
 
 $("#submit").click(submitVote);
+$("#signoutbtn").click(function() {firebase.auth().signOut();} );
 

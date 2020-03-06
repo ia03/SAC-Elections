@@ -46,7 +46,7 @@ body {
 }
 
 .candidate-container:hover {
-	outline: 1px solid lime;
+	outline: 3px solid lime;
 }
 
 #one {
@@ -55,7 +55,7 @@ body {
 
 #one:checked + label > .candidate-container {
     outline: 3px solid lime;
-    background-color: 
+    background-color: lime;
 }
 
 #two {
@@ -64,6 +64,7 @@ body {
 
 #two:checked + label > .candidate-container {
     outline: 3px solid lime;
+	background-color: lime;
 }
 
 #three {
@@ -72,6 +73,7 @@ body {
 
 #three:checked + label > .candidate-container {
     outline: 3px solid lime;
+	background-color: lime;
 }
 
 #four {
@@ -80,6 +82,7 @@ body {
 
 #four:checked + label > .candidate-container {
     outline: 3px solid lime;
+	background-color: lime;
 }
 
 #vote-container {

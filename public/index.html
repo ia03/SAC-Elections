@@ -23,40 +23,40 @@
       <div id="firebaseui-auth-container"></div>
       <p class="description" id="signinreminder">Sign in with your WRDSB account to vote.</p>
       <div hidden id="authcontent">
-        <div id="email" class="small"></div>
-        <button id="signoutbtn" onclick="firebase.auth().signOut();">Sign out</button>
-        <p class="small">Please vote using the school network to make sure your vote is counted.</p>
+        <div id="email" class="small"></div><br />
+        <div class="candidate-container" id="signoutbtn">Sign out</div>
+        <p class="small">Please vote using the school Wi-Fi network. Otherwise, your vote may be invalidated.</p>
         <p class="description">Choose 2 candidates to vote for:</p>
         
         <input type="checkbox" id="one" name="one" value="voted">
         <label class="btn" for="one">
           <div class="candidate-container">
-            <span class="candidate-name">Candidate #1</span>
+            <span class="candidate-name">Cecelia Schaeffer</span>
           </div>
         </label>
         <input type="checkbox" id="two" name="two" value="voted">
         <label class="btn" for="two">
           <div class="candidate-container">
-            <span class="candidate-name">Candidate #2</span>
+            <span class="candidate-name">Matthew Hernandez</span>
           </div>
         </label>
         <input type="checkbox" id="three" name="three" value="voted">
         <label class="btn" for="three">
           <div class="candidate-container">
-            <span class="candidate-name">Candidate #3</span>
+            <span class="candidate-name">Maria Neculau</span>
           </div>
         </label>
         <input type="checkbox" id="four" name="four" value="voted">
         <label class="btn" for="four">
           <div class="candidate-container">
-            <span class="candidate-name">Candidate #4</span>
+            <span class="candidate-name">Svend-Emil Poulsen</span>
           </div>
         </label>
         <div id="submit" class="candidate-container">Submit</div>
         <p id="errormsg" class="small"></p>
         <p id="statusmsg" class="small"></p>
         <br><br>
-        <p class="small">Website developed by <a href="https://ibrahimahmed.ca">Ibrahim Ahmed</a> using <a href="https://victorwei.com">Victor Wei's</a> page styling.</p>
+        <p class="small">Developed by <a href="https://ibrahimahmed.ca">Ibrahim Ahmed</a> using <a href="https://victorwei.com">Victor Wei's</a> page styling.</p>
       </div>
       <br />
     </div>
