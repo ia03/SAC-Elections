@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@master
         
       - name: Install Dependencies
-        run: npm install
+        run: npm install firebase-functions
       
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
