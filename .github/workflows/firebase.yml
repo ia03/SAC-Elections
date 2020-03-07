@@ -11,10 +11,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Initialize
-        run: npm init
       - name: Install Dependencies
-        run: npm install
+        run: npm install -g express
       - name: Build
         run: npm run build-prod
       - name: Archive Production Artifact
