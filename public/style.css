@@ -42,7 +42,7 @@ body {
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	text-align: center;
-	font-size: 2vh;
+	font-size: 3vh;
 }
 
 .candidate-container:hover {
