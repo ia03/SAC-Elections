@@ -38,6 +38,7 @@ exports.submitVote = functions.https.onCall((data, context) => {
     updates[email + '/vote2'] = votes[1];
     updates[email + '/voted'] = true;
 	updates[email + '/ip'] = context.rawRequest.ip;
+	updates[email + '/name'] = context.auth.token.name;
 	updates[email + '/date'] = admin.database.ServerValue.TIMESTAMP;
 	updates[email + '/useragent'] = context.rawRequest.get('User-Agent');
     ref.update(updates);
