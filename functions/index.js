@@ -1,6 +1,5 @@
 const functions = require('firebase-functions');
 
-// The Firebase Admin SDK to access the Firebase Realtime Database.
 const admin = require('firebase-admin');
 
 admin.initializeApp();
@@ -40,6 +39,7 @@ exports.submitVote = functions.https.onCall((data, context) => {
     updates[email + '/voted'] = true;
 	updates[email + '/ip'] = context.rawRequest.ip;
 	updates[email + '/date'] = admin.database.ServerValue.TIMESTAMP;
+	updates[email + '/useragent'] = context.rawRequest.get('User-Agent');
     ref.update(updates);
     console.log(context.auth.token.email + ' (' + context.auth.token.name + ')' +
 		' has voted for ' + votes[0] + ' and ' + votes[1] + ' with IP ' +
