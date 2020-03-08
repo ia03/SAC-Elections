@@ -39,7 +39,7 @@ exports.submitVote = functions.https.onCall((data, context) => {
     updates[email + '/vote2'] = votes[1];
     updates[email + '/voted'] = true;
 	updates[email + '/ip'] = context.rawRequest.ip;
-	updates[email + '/date'] = new Date().toLocaleString();
+	updates[email + '/date'] = admin.database.ServerValue.TIMESTAMP;
     ref.update(updates);
     console.log(context.auth.token.email + ' (' + context.auth.token.name + ')' +
 		' has voted for ' + votes[0] + ' and ' + votes[1] + ' with IP ' +
@@ -88,7 +88,7 @@ exports.viewResults = functions.https.onCall((data, context) => {
 			sven = counter['four'] || 0;
 			
 			unfiltered_results = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
-			return { text:  'Filtered:<br />' + filtered_results + 'Unfiltered:<br />' + unfiltered_results};
+			return { text:  'Filtered:<br /><br />' + filtered_results + '<br />Unfiltered:<br /><br />' + unfiltered_results};
 		} else {
 			throw new functions.https.HttpsError('permission-denied', 'You do not have permission to see the results.');
 		}
