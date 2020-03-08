@@ -89,9 +89,9 @@ exports.viewResults = functions.https.onCall((data, context) => {
 			sven = counter['four'] || 0;
 			
 			unfiltered_results = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
-			return { text:  'Filtered:<br /><br />' + filtered_results + '<br />Unfiltered:<br /><br />' + unfiltered_results};
+			return { text:  'Filtered:<br /><br />' + filtered_results + '<br />Unfiltered:<br /><br />' + unfiltered_results };
 		} else {
-			return { text: ''};
+			return { text: '' };
 		}
 		
 	});
