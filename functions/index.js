@@ -72,7 +72,7 @@ exports.viewResults = functions.https.onCall((data, context) => {
 			let maria = counter['three'] || 0;
 			let sven = counter['four'] || 0;
 			
-			filtered_results = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
+			filteredResults = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
 			
 			// Count without IP filtering.
 			counter = {};
@@ -88,8 +88,8 @@ exports.viewResults = functions.https.onCall((data, context) => {
 			maria = counter['three'] || 0;
 			sven = counter['four'] || 0;
 			
-			unfiltered_results = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
-			return { text:  'Filtered:<br /><br />' + filtered_results + '<br />Unfiltered:<br /><br />' + unfiltered_results };
+			unfilteredResults = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
+			return { text:  'Filtered:<br /><br />' + filteredResults + '<br />Unfiltered:<br /><br />' + unfilteredResults };
 		} else {
 			return { text: '' };
 		}
