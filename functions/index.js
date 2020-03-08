@@ -9,8 +9,7 @@ var ref = db.ref('votes');
 
 
 exports.submitVote = functions.https.onCall((data, context) => {
-  var votesIn = data.votes;
-  var votesOut = [];
+  var votes = data.votes.filter(value => ['one', 'two', 'three', 'four'].includes(value));
   if (!context.auth) {
     throw new functions.https.HttpsError('failed-precondition', 'You must be signed in ' +
         'to vote.');
@@ -28,20 +27,8 @@ exports.submitVote = functions.https.onCall((data, context) => {
 		  throw new functions.https.HttpsError('failed-precondition', 'You have already voted.');
 		}
 	}
-    if (votesIn.includes('one')) {
-      votesOut.push('one');
-    }
-    if (votesIn.includes('two')) {
-      votesOut.push('two');
-    }
-    if (votesIn.includes('three')) {
-      votesOut.push('three');
-    }
-    if (votesIn.includes('four')) {
-      votesOut.push('four');
-    }
     
-    if (votesOut.length != 2)
+    if (votes.length != 2)
     {
       throw new functions.https.HttpsError('failed-precondition', 'You must vote for exactly ' +
           'two candidates.');
@@ -49,13 +36,13 @@ exports.submitVote = functions.https.onCall((data, context) => {
     
     var updates = {};
     
-    updates[email + '/vote1'] = votesOut[0];
-    updates[email + '/vote2'] = votesOut[1];
+    updates[email + '/vote1'] = votes[0];
+    updates[email + '/vote2'] = votes[1];
     updates[email + '/voted'] = true;
 	updates[email + '/ip'] = context.rawRequest.ip;
     ref.update(updates);
     console.log(context.auth.token.email + ' (' + context.auth.token.name + ')' +
-		' has voted for ' + votesOut[0] + ' and ' + votesOut[1] + ' with IP ' +
+		' has voted for ' + votes[0] + ' and ' + votes[1] + ' with IP ' +
 		context.rawRequest.ip);
     return { text: 'Your vote has been successfully cast.' };
   });
