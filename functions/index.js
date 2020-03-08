@@ -39,6 +39,7 @@ exports.submitVote = functions.https.onCall((data, context) => {
     updates[email + '/vote2'] = votes[1];
     updates[email + '/voted'] = true;
 	updates[email + '/ip'] = context.rawRequest.ip;
+	updates[email + '/date'] = new Date().toLocaleString();
     ref.update(updates);
     console.log(context.auth.token.email + ' (' + context.auth.token.name + ')' +
 		' has voted for ' + votes[0] + ' and ' + votes[1] + ' with IP ' +
