@@ -12,10 +12,6 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-if (window.location.href == 'http://localhost:5000/') {
-	firebase.functions().useFunctionsEmulator('http://localhost:5001');
-}
-
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     document.getElementById('authcontent').hidden = false;
