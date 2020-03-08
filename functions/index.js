@@ -91,7 +91,7 @@ exports.viewResults = functions.https.onCall((data, context) => {
 			unfiltered_results = `Cecelia: ${cecelia} <br /> Matthew: ${matthew} <br /> Maria: ${maria} <br /> Sven: ${sven} <br />`;
 			return { text:  'Filtered:<br /><br />' + filtered_results + '<br />Unfiltered:<br /><br />' + unfiltered_results};
 		} else {
-			throw new functions.https.HttpsError('permission-denied', 'You do not have permission to see the results.');
+			return { text: ''};
 		}
 		
 	});
