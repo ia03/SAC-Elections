@@ -1,6 +1,6 @@
 const firebaseConfig = {
   apiKey: "AIzaSyDnIK8Ccn1cLBo_vzBdQOAgWGIKZWkbQ8s",
-  authDomain: "auth.elections.chciprogramming.com",
+  authDomain: "elections.chciprogramming.com",
   databaseURL: "https://sac-elections.firebaseio.com",
   projectId: "sac-elections",
   storageBucket: "sac-elections.appspot.com",
